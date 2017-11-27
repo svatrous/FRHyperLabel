@@ -205,6 +205,10 @@ static UIColor *FRHyperLabelLinkColorHighlight;
 - (NSValue *)attributedTextRangeForPoint:(CGPoint)point {
 
 	NSInteger indexOfCharacter = [self characterIndexForPoint:point];
+    
+   	 if (indexOfCharacter == -1) {
+   	     indexOfCharacter = 1;
+   	 }
 	
 	for (NSValue *rangeValue in self.handlerDictionary) {
 		NSRange range = [rangeValue rangeValue];
